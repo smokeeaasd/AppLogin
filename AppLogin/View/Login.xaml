@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLogin.View.Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Background>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0.1" Color="#9c14db"/>
+
+                    <GradientStop Offset="1.0" Color="#5014db"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <Label Text="Login"
+                   Margin="0, 25, 0, 25"
+                   VerticalOptions="Center" HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="50"
+                   FontFamily="monospace"
+                   FontAttributes="Bold"/>
+
+            <Frame x:Name="frameLogin"
+                   VerticalOptions="Center" HorizontalOptions="Center"
+                   WidthRequest="250"
+                   HeightRequest="250"
+                   CornerRadius="30">
+
+                <StackLayout>
+                    <Label Text="Email"
+                           TranslationY="10"
+                               FontSize="25" FontFamily="monospace"
+                               FontAttributes="Bold" TextColor="#eee" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="entryEmail"
+                        Placeholder="Insira o seu email" Keyboard="Email" PlaceholderColor="#ddd" TextColor="#eee" Margin="0, 0, 0, 10"/>
+
+                    <Label Text="Senha"
+                           TranslationY="10"
+                           FontSize="25" FontFamily="monospace"
+                           FontAttributes="Bold" TextColor="#eee" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="entrySenha"
+                        Placeholder="Senha" IsPassword="True" PlaceholderColor="#ddd" TextColor="#eee" Margin="0, 0, 0, 10"/>
+
+                    <Button x:Name="btnLogin" HorizontalOptions="Center" BackgroundColor="Transparent"
+                            BorderColor="#fff"
+                            BorderWidth="1.5"
+                            CornerRadius="30"
+                            WidthRequest="125"
+                            HeightRequest="45"
+                            Text="Entrar"
+                            TextColor="#fff"
+                            FontFamily="monospace"
+                            TextTransform="None"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Clicked="btnLogin_Clicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
