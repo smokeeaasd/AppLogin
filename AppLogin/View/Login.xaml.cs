@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppLogin.Model;
+
 namespace AppLogin.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -23,6 +25,16 @@ namespace AppLogin.View
         {
             string email = entryEmail.Text;
             string senha = entrySenha.Text;
+
+            foreach (DadosUsuario usuario in Usuarios.ListaUsuarios)
+            {
+                if ((usuario.Email == email) && (usuario.Senha == senha))
+                {
+                    Navigation.PushAsync(new Protegida());
+                    return;
+                }
+                DisplayAlert("Aviso", "Email ou senha incorretos", "ok");
+            }
         }
     }
 }
